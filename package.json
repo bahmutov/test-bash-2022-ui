@@ -1,0 +1,25 @@
+{
+  "name": "test-bash-2022-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/test-bash-2022-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahmutov/test-bash-2022-ui/issues"
+  },
+  "homepage": "https://github.com/bahmutov/test-bash-2022-ui#readme",
+  "devDependencies": {
+    "cypress": "^10.8.0",
+    "prettier": "^2.7.1"
+  }
+}
