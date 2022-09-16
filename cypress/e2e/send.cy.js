@@ -1,4 +1,4 @@
-it('sends a message successfully', () => {
+it('sends a message successfully', { retries: 2 }, () => {
   const name = 'Test Cy User'
   const email = 'email@email.com'
   const phone = '123-456-7890'
