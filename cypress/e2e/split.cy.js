@@ -2,6 +2,13 @@ Cypress.Commands.add('got', (testid) => {
   return cy.get(`[data-testid="${testid}"]`)
 })
 
+Cypress.Commands.add('login', () => {
+  cy.request('POST', '/auth/login', {
+    username: Cypress.env('username'),
+    password: Cypress.env('password'),
+  })
+})
+
 it('sends a message successfully', () => {
   const name = 'Test Cy User'
   const email = 'email@email.com'
@@ -54,11 +61,8 @@ it('can log in using UI', () => {
   cy.location('hash').should('equal', '#/admin/messages')
 })
 
-it.only('can log in using API call', () => {
-  cy.request('POST', '/auth/login', {
-    username: Cypress.env('username'),
-    password: Cypress.env('password'),
-  })
+it('can log in using API call', () => {
+  cy.login()
   cy.visit('/#/admin/messages')
   cy.contains('a', 'Logout').should('be.visible').scrollIntoView()
 })
@@ -78,10 +82,7 @@ it('views the message', () => {
   }
   cy.request('POST', '/message/', message).its('status').should('equal', 201)
 
-  cy.request('POST', '/auth/login', {
-    username: Cypress.env('username'),
-    password: Cypress.env('password'),
-  })
+  cy.login()
   cy.visit('/#/admin/messages')
 
   cy.get('.row.detail')
@@ -97,6 +98,7 @@ it('views the message', () => {
     .and('include.text', subject)
     .and('include.text', description)
     .contains('button', 'Close')
+    .wait(1000) // just to make the video clear
     .click()
   cy.contains('.message-modal', subject).should('not.exist')
   cy.contains('.row.detail', subject)
