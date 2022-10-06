@@ -4,6 +4,8 @@ My solution to [Test.Bash 2022 UI Automation challenge](https://www.ministryofte
 
 Read the blog post [Solving Test.Bash 2022 UI Challenge With Cypress](https://glebbahmutov.com/blog/test-bash-2022-ui-challenge/) and watch the solution in the video [Test.Bash 2022 UI Challenge Solution Using Cypress.io Test Runner](https://youtu.be/GjKSzHPyDyo).
 
+Read the blog post [Split A Test.Bash 2022 Test](https://glebbahmutov.com/blog/split-test/)
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2022
